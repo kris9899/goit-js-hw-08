@@ -91,3 +91,5 @@ function createMarkup(arr) {
 function handleClick(event) {
   event.preventDefault();
 }
+
+// в модалці: img src="${event.target.dataset.source}"
