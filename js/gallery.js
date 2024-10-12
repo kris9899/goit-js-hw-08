@@ -90,6 +90,17 @@ function createMarkup(arr) {
 
 function handleClick(event) {
   event.preventDefault();
-}
+  const target = event.target;
+  if (target.nodeName !== 'IMG') {
+    return;
+  }
 
-// в модалці: img src="${event.target.dataset.source}"
+  const instance = basicLightbox.create(`
+    <div class="modal">
+      <img src="${target.dataset.source}" alt="${target.alt}">
+      
+    </div>
+  `);
+
+  instance.show();
+}
